@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img class="avatar" src="./assets/avatar.png">
+    <img src="./assets/logo.png">
     <hello></hello>
   </div>
 </template>
@@ -24,10 +24,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-.avatar {
-    width: 300px;
-    height: 300px;
 }
 </style>

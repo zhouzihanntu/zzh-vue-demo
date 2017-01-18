@@ -2,10 +2,6 @@
 
 > A Vue.js project
 
-# dev-blog
-record issues I came across through development
-
-
 ## Build Setup
 
 ``` bash

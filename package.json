@@ -2,7 +2,7 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "zhouzihan <zhouzihanntu@outlook.com>",
+  "author": "zhouzihanntu <abbey357423606@hotmail.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
