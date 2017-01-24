@@ -1,7 +1,7 @@
 <template>
-    <div id = "HomeList">
+    <div id = "HomeList" v-if = "loaded">
         <ul>
-            <li v-for = "( issue, index ) in issues">
+            <li v-for = "( issue, index ) in issues" v-on:click = "directTo( index )">
                 <div class="listItem">
                     <span v-text = "issue.title"></span>
                 </div>
@@ -18,9 +18,11 @@ export default {
     name: "HomeList",
     data () {
         return {
-            msg: "hhh",
-            repo: "dev-blog",
-            owner: "zhouzihanntu",
+            loaded: false,
+            // repo: "dev-blog",
+            // owner: "zhouzihanntu",
+            repo: "gold-miner",
+            owner: "xitu",
             issues: []
         }
     },
@@ -36,12 +38,16 @@ export default {
         .then(function (response) {
             console.log(response.data);
             self.issues = response.data;
+            self.loaded = true;
         })
         .catch(function (error) {
             console.log(error);
         });
     },
     methods: {
+        directTo: function( index ) {
+            console.log( index );
+        }
         // test: function() {
         //     alert(22);
         // }
@@ -62,6 +68,11 @@ li {
     height: 60px;
     line-height: 60px;
     border-bottom: 1px solid #1aad19;
+}
+
+li:hover {
+    cursor: pointer;
+    box-shadow: 0px 2px 0px #1aad19;
 }
 
 a:hover {

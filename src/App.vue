@@ -5,8 +5,17 @@
             <img src="./assets/img/avatar.png">
         </div>
 
-        <HomeList></HomeList>
+        <!-- <HomeList></HomeList> -->
+
+        <router-view
+            class="view"
+            keep-alive
+            transition
+            transition-mode="out-in">
+        </router-view>
     </div>
+
+
 
 </template>
 
@@ -31,6 +40,9 @@ body {
     background-color: #FFFFFF;
 }
 
+#HomeList {
+    border: 1px solid #93A2AC;
+}
 
 #app {
     width: 70%;
@@ -40,7 +52,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     margin-top: 60px;
-    border: 1px solid #93A2AC;
 }
 
 .avatar {
