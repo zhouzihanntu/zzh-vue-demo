@@ -1,7 +1,7 @@
 <template>
 
  <div class="jumbotron">
-       <h1>这里是首页！</h1>
+       <h1>index</h1>
  </div>
 
 </template>

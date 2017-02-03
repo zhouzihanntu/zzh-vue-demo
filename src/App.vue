@@ -4,15 +4,17 @@
         <div class="avatar">
             <img src="./assets/img/avatar.png">
         </div>
+        <p>
+            <!-- 使用 router-link 组件来导航. -->
+            <!-- 通过传入 `to` 属性指定链接. -->
+            <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+            <router-link to="/list">Go to list</router-link>
+            <router-link to="/">Go to index</router-link>
+        </p>
 
         <!-- <HomeList></HomeList> -->
 
-        <router-view
-            class="view"
-            keep-alive
-            transition
-            transition-mode="out-in">
-        </router-view>
+        <router-view class="view" keep-alive transition transition-mode="out-in"></router-view>
     </div>
 
 
@@ -45,13 +47,16 @@ body {
 }
 
 #app {
-    width: 70%;
-    margin: auto;
+    width: 720px;
+    mar 0gin: auto;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
+
+    margin: auto;
     margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .avatar {

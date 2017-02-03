@@ -23,7 +23,9 @@ export default {
             // owner: "zhouzihanntu",
             repo: "gold-miner",
             owner: "xitu",
-            issues: []
+            issues: [],
+            pageArray: [], 
+            currentList: []
         }
     },
     mounted: function() {
