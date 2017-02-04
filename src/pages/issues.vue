@@ -52,22 +52,17 @@ export default {
     methods: {
         directTo: function( index ) {
             console.log( index );
+            location.href = "/info/" + index;
         }
-        // test: function() {
-        //     alert(22);
-        // }
     }
 }
 
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 ul {
     list-style-type: none;
-    /*padding: 30px 0;*/
 }
 
 li {
@@ -79,7 +74,7 @@ li {
 
 li:hover {
     cursor: pointer;
-    box-shadow: 2px 2px 0px #1aad19;
+    box-shadow: 2px 2px 2px #1aad19;
 }
 
 a:hover {
