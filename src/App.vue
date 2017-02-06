@@ -50,6 +50,7 @@ body {
 }
 
 #HomeList {
+    min-height: 800px;
     border: 1px solid #93A2AC;
 }
 
@@ -63,6 +64,7 @@ body {
     margin: auto;
     margin-top: 120px;
     margin-bottom: 60px;
+    overflow: hidden;
 }
 
 .navigator {

@@ -1,12 +1,18 @@
 <template>
     <div id = "HomeList" >
+        <div id="loading" v-if = "!loaded">
+            <h1>loading</h1>
+        </div>
         <h1>{{title}}</h1>
-        <p>{{body}}</p>
+        <div v-html = "body">
+
+        </div>
     </div>
 </template>
 
 <script>
 import axios from "../assets/js/axios.js"
+var marked = require('marked');
 
 let baseUrl = "https://api.github.com/";
 
@@ -14,12 +20,13 @@ export default {
     name: "HomeList",
     data () {
         return {
+            loaded: false,
             title: "",
             body: "",
-            // repo: "dev-blog",
-            // owner: "zhouzihanntu",
-            repo: "gold-miner",
-            owner: "xitu",
+            repo: "zzh-vue-demo",
+            owner: "zhouzihanntu",
+            // repo: "gold-miner",
+            // owner: "xitu",
         }
     },
     mounted: function() {
@@ -40,19 +47,19 @@ export default {
             console.log(response.data.title);
             self.title = response.data.title;
             self.body = response.data.body;
-            // self.loaded = true;
+            self.transform( self.body );
+            self.loaded = true;
         })
         .catch(function (error) {
             console.log(error);
         });
     },
     methods: {
-        // directTo: function( index ) {
-        //     console.log( index );
-        // }
-        // test: function() {
-        //     alert(22);
-        // }
+        transform: function( mdText ) {
+            let self = this;
+            console.log(marked(mdText));
+            self.body = marked(mdText);
+        }
     }
 }
 

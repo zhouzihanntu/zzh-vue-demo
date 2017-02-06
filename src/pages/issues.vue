@@ -1,7 +1,7 @@
 <template>
     <div id = "HomeList" >
         <ul v-if = "loaded">
-            <li v-for = "( issue, index ) in issues" v-on:click = "directTo( index )">
+            <li v-for = "( issue, index ) in issues" v-on:click = "directTo( issue.number )">
                 <div class="listItem">
                     <span v-text = "issue.title"></span>
                 </div>
@@ -22,10 +22,10 @@ export default {
     data () {
         return {
             loaded: false,
-            // repo: "dev-blog",
-            // owner: "zhouzihanntu",
-            repo: "gold-miner",
-            owner: "xitu",
+            repo: "zzh-vue-demo",
+            owner: "zhouzihanntu",
+            // repo: "gold-miner",
+            // owner: "xitu",
             issues: [],
             pageArray: [],
             currentList: []
@@ -52,7 +52,7 @@ export default {
     methods: {
         directTo: function( index ) {
             console.log( index );
-            location.href = "/info/" + index;
+            location.href = "/issues/" + index;
         }
     }
 }
