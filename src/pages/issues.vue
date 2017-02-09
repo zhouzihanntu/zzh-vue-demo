@@ -1,5 +1,5 @@
 <template>
-    <div id = "HomeList" >
+    <div id = "issueList" >
         <ul v-if = "loaded">
             <li v-for = "( issue, index ) in issues" v-on:click = "directTo( issue.number )">
                 <div class="listItem">
@@ -61,6 +61,11 @@ export default {
 </script>
 
 <style scoped>
+
+#issueList {
+    padding: 30px;
+}
+
 ul {
     list-style-type: none;
 }

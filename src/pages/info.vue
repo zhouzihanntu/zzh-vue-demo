@@ -1,9 +1,8 @@
 <template>
-    <div id = "HomeList" >
+    <div id = "issueInfo" >
         <div id="loading" v-if = "!loaded">
             <h1>loading</h1>
         </div>
-        <h1>{{title}}</h1>
         <div v-html = "body">
 
         </div>
@@ -32,10 +31,10 @@ export default {
     mounted: function() {
         let self = this;
         let hh = location.href;
-        console.log(hh);
+        // console.log(hh);
         let reg = /(issues\/=?\d*)/g;
         let res = reg.exec(hh)[0].replace("issues/", "");
-        console.log(res);
+        // console.log(res);
         let targetUrl = baseUrl + "repos/" + self.owner + "/" + self.repo + "/issues/" + res;
         let config = {
             headers: {
@@ -44,7 +43,7 @@ export default {
         };
         axios.get( targetUrl, config)
         .then(function (response) {
-            console.log(response.data.title);
+            // console.log(response.data.title);
             self.title = response.data.title;
             self.body = response.data.body;
             self.transform( self.body );
@@ -57,7 +56,7 @@ export default {
     methods: {
         transform: function( mdText ) {
             let self = this;
-            console.log(marked(mdText));
+            // console.log(marked(mdText));
             self.body = marked(mdText);
         }
     }
@@ -68,6 +67,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 
 
 </style>
