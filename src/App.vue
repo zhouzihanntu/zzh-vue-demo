@@ -89,7 +89,7 @@ blockquote {
 
 .navigator .navs a.router-link-active {
     /*border-bottom: 2px solid;*/
-    box-shadow: 0px 2px 3px;
+    box-shadow: 0px 4px 2px -2px;
 }
 
 .avatar {
@@ -100,6 +100,12 @@ blockquote {
     float: right;
     overflow: hidden;
     margin: 0 1.5em;
+    box-shadow: 2px 2px 2px 0px #ccc;
+    cursor: pointer;
+}
+
+.avatar:hover {
+    /*box-shadow: 2px 2px #ccc;*/
 }
 
 .avatar img {
@@ -131,6 +137,18 @@ blockquote {
     background: #f8f8f8;
 }
 
+.sideNavs {
+    position: fixed;
+    top: 150px;
+    margin-left: -80px;
+}
+
+.sideNavs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.5em;
+}
+
 </style>
 
 
@@ -138,17 +156,34 @@ blockquote {
 
     <div id="app">
         <div class="navigator">
-            <div class="avatar" v-on:mouseover = "mouseOnAvatar">
+            <!-- <div class="avatar" v-on:mouseover = "mouseOnAvatar"> -->
+            <div class="avatar" v-on:click = "toGithub">
                 <img src="./assets/img/avatar.png">
-                <div v-show = "showAvatarTip" class="tooltip">
+                <!-- <div v-show = "showAvatarTip" class="tooltip">
                     Github
-                </div>
+                </div> -->
             </div>
             <div class="navs">
                 <router-link to="/" exact>Home</router-link>
                 <router-link to="/issues">Issues</router-link>
-                <!-- <router-link to="/info">Go to info</router-link> -->
             </div>
+        </div>
+
+        <div class="sideNavs">
+            <ul>
+                <li>
+                    <a href="https://github.com/zhouzihanntu/zzh-vue-demo" class="github">
+                        <svg aria-hidden="true" class="octicon octicon-mark-github" height="28" version="1.1" viewBox="0 0 16 16" width="28">
+                            <path fill-rule="evenodd"
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+                <!-- <li>
+                    <span class="wechat"></span>
+                </li> -->
+            </ul>
         </div>
 
         <router-view class="view" keep-alive transition transition-mode="out-in"></router-view>
@@ -164,25 +199,33 @@ export default {
   data() {
       return {
           showAvatarTip: false,
-          showTipTimer: ""
+          showTipTimer: "",
+        //   sideNav: [
+        //       {
+        //           type: "github",
+        //           icon: ""
+        //       }
+        //   ]
       }
   },
   mounted: function() {
 
   },
   methods: {
-      mouseOnAvatar: function() {
-          let self = this;
-        //   self.showTipTimer = setTimeout
-          self.showAvatarTip = true;
-          if ( self.showTipTimer ) {
-              clearTimeout ( self.showTipTimer );
-          }
-          self.showTipTimer = setTimeout ( function() {
-              self.showAvatarTip = false;
-              console.log(3);
-          }, 3000 );
-      }
+    //   mouseOnAvatar: function() {
+    //       let self = this;
+    //       self.showAvatarTip = true;
+    //       if ( self.showTipTimer ) {
+    //           clearTimeout ( self.showTipTimer );
+    //       }
+    //       self.showTipTimer = setTimeout ( function() {
+    //           self.showAvatarTip = false;
+    //           console.log(3);
+    //       }, 3000 );
+    //   }
+    toGithub: function() {
+        location.href = "https://github.com/zhouzihanntu";
+    }
   }
 }
 </script>
