@@ -9,6 +9,7 @@
         </ul>
         <div id="loading" v-if = "!loaded">
             <h1>loading</h1>
+            <h1>Retry after {{resetTime}}</h1>
         </div>
     </div>
 </template>
@@ -28,7 +29,8 @@ export default {
             // owner: "xitu",
             issues: [],
             pageArray: [],
-            currentList: []
+            currentList: [],
+            resetTime: ""
         }
     },
     mounted: function() {
@@ -41,9 +43,20 @@ export default {
         };
         axios.get( targetUrl, config)
         .then(function (response) {
-            console.log(response.data);
-            self.issues = response.data;
-            self.loaded = true;
+            console.log( response.headers['x-ratelimit-reset'] );
+            // console.log(response.data);
+            // if (response.status == 200 ) {
+            //     self.issues = response.data;
+            //     self.loaded = true;
+            //
+            // } else if (response.status == 403) {
+            //     self.resetTime = response.headers['x-ratelimit-reset'].toLocaleString();
+            //     console.log(self.resetTime);
+            // }
+            let hhh = response.headers['x-ratelimit-reset'];
+
+            self.resetTime = new Date( hhh * 1000 ).toLocaleString();
+            console.log(self.resetTime);
         })
         .catch(function (error) {
             console.log(error);
