@@ -1,153 +1,153 @@
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-}
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-body {
-    color: #333;
-    font-family: -apple-system,PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Helvetica Neue,sans-serif;
-    text-rendering: optimizeLegibility;
-    background-color: #FFFFFF;
-}
+    body {
+        color: #333;
+        font-family: -apple-system,PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Helvetica Neue,sans-serif;
+        text-rendering: optimizeLegibility;
+        background-color: #FFFFFF;
+    }
 
-a {
-    text-decoration: none;
-}
+    a {
+        text-decoration: none;
+    }
 
-p {
-    display: block;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-}
+    p {
+        display: block;
+        -webkit-margin-before: 1em;
+        -webkit-margin-after: 1em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+    }
 
-ul {
-    display: block;
-    list-style-type: disc;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-start: 40px;
-}
+    ul {
+        display: block;
+        list-style-type: disc;
+        -webkit-margin-before: 1em;
+        -webkit-margin-after: 1em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        -webkit-padding-start: 40px;
+    }
 
-blockquote {
-    margin: 1em 0;
-    border-left: 4px solid #ddd;
-    padding: 0 1em;
-    color: #666;
-}
+    blockquote {
+        margin: 1em 0;
+        border-left: 4px solid #ddd;
+        padding: 0 1em;
+        color: #666;
+    }
 
-::-webkit-scrollbar {
-    width: 0;
-}
+    ::-webkit-scrollbar {
+        width: 0;
+    }
 
-#app {
-    width: 900px;
-    mar 0gin: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-    margin: auto;
-    padding-top: 6em;
-    padding-bottom: 3em;
-    overflow: hidden;
-}
+    #app {
+        width: 900px;
+        mar 0gin: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #2c3e50;
+        margin: auto;
+        padding-top: 6em;
+        padding-bottom: 3em;
+        overflow: hidden;
+    }
 
-#app img {
-    max-width: 100%;
-    max-height: 668px;
-}
+    #app img {
+        max-width: 100%;
+        max-height: 668px;
+    }
 
-.navigator {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 960px;
-    height: 45px;
-    margin: auto;
-    padding: 1em 2em;
-    background-color: #FFFFFF;
-    display: -webkit-flex; /* Safari */
-    display: flex;
-    flex-direction: row-reverse;
-    line-height: 45px;
-}
+    .navigator {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 960px;
+        height: 45px;
+        margin: auto;
+        padding: 1em 2em;
+        background-color: #FFFFFF;
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        flex-direction: row-reverse;
+        line-height: 45px;
+    }
 
-.navigator .navs a {
-    display: inline-block;
-    padding: 0 10px;
-    padding-bottom: 10px;
-    height: 45px;
-    text-decoration: none;
-    color: #1aad19;
-}
+    .navigator .navs a {
+        display: inline-block;
+        padding: 0 10px;
+        padding-bottom: 10px;
+        height: 45px;
+        text-decoration: none;
+        color: #1aad19;
+    }
 
-.navigator .navs a.router-link-active {
-    /*border-bottom: 2px solid;*/
-    box-shadow: 0px 4px 2px -2px;
-}
+    .navigator .navs a.router-link-active {
+        /*border-bottom: 2px solid;*/
+        box-shadow: 0px 4px 2px -2px;
+    }
 
-.avatar {
-    width: 45px;
-    height: 45px;
-    border-radius: 45px;
-    display: inline-block;
-    float: right;
-    overflow: hidden;
-    margin: 0 1.5em;
-    box-shadow: 2px 2px 2px 0px #ccc;
-    cursor: pointer;
-}
+    .avatar {
+        width: 45px;
+        height: 45px;
+        border-radius: 45px;
+        display: inline-block;
+        float: right;
+        overflow: hidden;
+        margin: 0 1.5em;
+        box-shadow: 2px 2px 2px 0px #ccc;
+        cursor: pointer;
+    }
 
-.avatar:hover {
-    /*box-shadow: 2px 2px #ccc;*/
-}
+    .avatar:hover {
+        /*box-shadow: 2px 2px #ccc;*/
+    }
 
-.avatar img {
-    width: 45px;
-    height: 45px;
-}
+    .avatar img {
+        width: 45px;
+        height: 45px;
+    }
 
-.avatar .tooltip {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    background-color: red;
-}
+    .avatar .tooltip {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background-color: red;
+    }
 
-#issueInfo a {
-    color: #259;
-}
+    #issueInfo a {
+        color: #259;
+    }
 
-#issueInfo code {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    font-size: .8em;
-    font-family: Menlo,Monaco,Consolas,Courier New,monospace;
-    padding: .5em 1em;
-    margin: 0;
-    word-break: normal;
-    display: block;
-    color: #333;
-    background: #f8f8f8;
-}
+    #issueInfo code {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: .8em;
+        font-family: Menlo,Monaco,Consolas,Courier New,monospace;
+        padding: .5em 1em;
+        margin: 0;
+        word-break: normal;
+        display: block;
+        color: #333;
+        background: #f8f8f8;
+    }
 
-.sideNavs {
-    position: fixed;
-    top: 150px;
-    margin-left: -80px;
-}
+    .sideNavs {
+        position: fixed;
+        top: 150px;
+        margin-left: -80px;
+    }
 
-.sideNavs ul {
-    list-style: none;
-    margin: 0;
-    padding: 0.5em;
-}
+    .sideNavs ul {
+        list-style: none;
+        margin: 0;
+        padding: 0.5em;
+    }
 
 </style>
 
@@ -192,10 +192,12 @@ blockquote {
 </template>
 
 <script>
-// import HomeList from './components/HomeList'
+
+import store from './vuex/store'
 
 export default {
   name: 'app',
+  store,
   data() {
       return {
           showAvatarTip: false,
@@ -208,8 +210,9 @@ export default {
         //   ]
       }
   },
-  mounted: function() {
 
+  mounted: function() {
+    
   },
   methods: {
     //   mouseOnAvatar: function() {

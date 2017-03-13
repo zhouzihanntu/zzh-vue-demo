@@ -16,7 +16,6 @@ var marked = require('marked');
 let baseUrl = "https://api.github.com/";
 
 export default {
-    name: "HomeList",
     data () {
         return {
             loaded: false,

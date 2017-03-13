@@ -9,7 +9,7 @@
         </ul>
         <div id="loading" v-if = "!loaded">
             <h1>loading</h1>
-            <h1>Retry after {{resetTime}}</h1>
+            <h1 v-if = "beyondLimit">Retry after {{resetTime}}</h1>
         </div>
     </div>
 </template>
@@ -19,7 +19,6 @@ import axios from "../assets/js/axios.js"
 let baseUrl = "https://api.github.com/";
 
 export default {
-    name: "HomeList",
     data () {
         return {
             loaded: false,
@@ -30,6 +29,7 @@ export default {
             issues: [],
             pageArray: [],
             currentList: [],
+            beyondLimit: false,
             resetTime: ""
         }
     },
@@ -44,13 +44,14 @@ export default {
         axios.get( targetUrl, config)
         .then(function (response) {
             console.log( response.headers['x-ratelimit-reset'] );
-            // console.log(response.data);
+            console.log(response.data);
             // if (response.status == 200 ) {
             //     self.issues = response.data;
             //     self.loaded = true;
-            //
+            
             // } else if (response.status == 403) {
             //     self.resetTime = response.headers['x-ratelimit-reset'].toLocaleString();
+            
             //     console.log(self.resetTime);
             // }
             let hhh = response.headers['x-ratelimit-reset'];
