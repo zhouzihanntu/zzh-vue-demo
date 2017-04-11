@@ -16,6 +16,7 @@
 
 <script>
 import axios from "../assets/js/axios.js"
+
 let baseUrl = "https://api.github.com/";
 
 export default {
@@ -43,21 +44,21 @@ export default {
         };
         axios.get( targetUrl, config)
         .then(function (response) {
-            console.log( response.headers['x-ratelimit-reset'] );
-            console.log(response.data);
-            // if (response.status == 200 ) {
-            //     self.issues = response.data;
-            //     self.loaded = true;
+            console.log( response.headers['x-ratelimit-reset'], 'x-ratelimit-reset' );
+            console.log(response.data, 'response.data');
+            if (response.status == 200 ) {
+                self.issues = response.data;
+                self.loaded = true;
             
-            // } else if (response.status == 403) {
-            //     self.resetTime = response.headers['x-ratelimit-reset'].toLocaleString();
+            } else if (response.status == 403) {
+                self.resetTime = response.headers['x-ratelimit-reset'].toLocaleString();
             
-            //     console.log(self.resetTime);
-            // }
+                console.log(self.resetTime);
+            }
             let hhh = response.headers['x-ratelimit-reset'];
 
             self.resetTime = new Date( hhh * 1000 ).toLocaleString();
-            console.log(self.resetTime);
+            console.log(self.resetTime, 'resetTime');
         })
         .catch(function (error) {
             console.log(error);
@@ -74,36 +75,34 @@ export default {
 
 </script>
 
-<style scoped>
+<style rel="stylesheet/less" lang="less" scoped>
 
 #issueList {
     padding: 30px;
+    ul {
+        list-style-type: none;
+    }
+    li {
+        padding: 0 30px;
+        height: 60px;
+        line-height: 60px;
+        border-bottom: 1px solid #1aad19;
+        .listItem {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 660px;
+        }
+    }
+
+    li:hover {
+        cursor: pointer;
+        box-shadow: 2px 2px 2px #1aad19;
+    }
+
+    a:hover {
+        color: red;
+    }
 }
 
-ul {
-    list-style-type: none;
-}
-
-li {
-    padding: 0 30px;
-    height: 60px;
-    line-height: 60px;
-    border-bottom: 1px solid #1aad19;
-}
-
-li:hover {
-    cursor: pointer;
-    box-shadow: 2px 2px 2px #1aad19;
-}
-
-a:hover {
-    color: red;
-}
-
-.listItem {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 660px;
-}
 </style>

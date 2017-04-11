@@ -12,7 +12,6 @@
 
 
 <script type="text/javascript">
-	// import {modifyData} from '../vuex/actions' 
 	import {modifyData} from '../vuex/actions' 
     import {getDefaultInfo} from '../vuex/getters'
 
@@ -22,10 +21,6 @@
 				rawHtml:''
 			}
 		},
-		/*
-			this.$store,
-		*/
-
 		computed:{
 			rawHtml(){
 				return this.$store.state.defaultInfo;
@@ -42,80 +37,7 @@
 
 			}
 		}
-		// vuex:{
-		// 	actions:{
-		// 		modifyData
-		// 	},
-		// 	getters:{
-		// 		rawHtml:getDefaultInfo
-		// 	}
-		// },
+		
 	}
 
-
-
-	// export default {
-	//     // data () {
-	//     //     return {
-	//     //         repo: "zzh-vue-demo",
-	//     //         owner: "zhouzihanntu",
-	//     //         // repo: "gold-miner",
-	//     //         // owner: "xitu",
-	//     //     }
-	//     // },
-
-	//     data(){
-	//     	return {
-	//     		defaultInfo:getDefaultInfo
-	//     	}
-	//     },
-
-	//     methods:{
-	//     	modifyData(){
-
-	//     	}
-	//     },
-
-	//     vuex:{//看到没，里面有个 vuex 对象，actions和getters两者相得益彰
- //            actions:{
- //                // \modifyData
- //                //内容改变触发
- //            },
- //            getters:{
- //                //获得rawHtml 
- //            }
- //        },
-	//     // mounted: function() {
-	//     //     let self = this;
-	//     //     let hh = location.href;
-	//     //     // console.log(hh);
-	//     //     let reg = /(issues\/=?\d*)/g;
-	//     //     let res = reg.exec(hh)[0].replace("issues/", "");
-	//     //     // console.log(res);
-	//     //     let targetUrl = baseUrl + "repos/" + self.owner + "/" + self.repo + "/issues/" + res;
-	//     //     let config = {
-	//     //         headers: {
-	//     //             'Content-Type': 'application/json'
-	//     //         }
-	//     //     };
-	//     //     axios.get( targetUrl, config)
-	//     //     .then(function (response) {
-	//     //         // console.log(response.data.title);
-	//     //         self.title = response.data.title;
-	//     //         self.body = response.data.body;
-	//     //         self.transform( self.body );
-	//     //         self.loaded = true;
-	//     //     })
-	//     //     .catch(function (error) {
-	//     //         console.log(error);
-	//     //     });
-	//     // },
-	//     // methods: {
-	//     //     transform: function( mdText ) {
-	//     //         let self = this;
-	//     //         // console.log(marked(mdText));
-	//     //         self.body = marked(mdText);
-	//     //     }
-	//     // }
-	// }
 </script>
