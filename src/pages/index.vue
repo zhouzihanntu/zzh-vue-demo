@@ -1,7 +1,6 @@
 <template>
 
  <div class="">
-       <h1>welcome </h1>
        <!-- <input type="text" name="" value=""> -->
        <button v-on:click = "modifyData">hhhhhhhhhhh</button>
        <h3>{{rawHtml}}-323213</h3>
