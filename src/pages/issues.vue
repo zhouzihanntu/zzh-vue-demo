@@ -15,7 +15,8 @@
 </template>
 
 <script>
-import axios from "../assets/js/axios.js"
+import axios from "../assets/js/axios.js";
+import { mapState } from 'vuex';
 
 let baseUrl = "https://api.github.com/";
 
@@ -23,16 +24,18 @@ export default {
     data () {
         return {
             loaded: false,
-            repo: "zzh-vue-demo",
-            owner: "zhouzihanntu",
-            // repo: "gold-miner",
-            // owner: "xitu",
             issues: [],
             pageArray: [],
             currentList: [],
             beyondLimit: false,
             resetTime: ""
         }
+    },
+    computed: {
+        ...mapState( {
+            owner: store => store.search.condition.owner,
+            repo: store => store.search.condition.repo,
+        } )
     },
     mounted: function() {
         let self = this;

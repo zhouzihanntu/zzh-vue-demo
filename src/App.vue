@@ -19,13 +19,11 @@
 
 <script>
 
-import store from './vuex/store'
 import sideNavs from './components/side-navs'
 
 export default {
   name: 'app',
   components: { sideNavs },
-  store,
   data() {
       return {
           showAvatarTip: false,
